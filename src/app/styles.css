@@ -1,0 +1,135 @@
+/* General Layout Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh; /* Full screen height */
+  margin: 0;
+  background-color: white; /* Set background color of entire page to white */
+}
+
+/* Left Sidebar: Operation Log */
+.log-sidebar {
+  width: 30%;
+  padding: 20px;
+  color: black;
+  margin: 0;
+  height: 100%;
+  background-color: white;
+}
+
+/* Center: Stack Controls */
+.controls {
+  width: 30%;
+  margin: 0;
+  height: 100%;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.controls input {
+  padding: 5px;
+  margin-right: 10px;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.controls button {
+  padding: 10px;
+  margin: 5px;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Text color on buttons */
+  border: none;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Right Sidebar: 3D Stack Visualization */
+.visualizer {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+/* Container for the stack items with perspective for 3D look */
+.stack-container {
+  display: flex;
+  flex-direction: column-reverse; /* Bottom item at the bottom */
+  align-items: center;
+  justify-content: flex-end;
+  height: 400px; /* Adjust height based on your design */
+  perspective: 1500px; /* Create a sense of depth */
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Slight shadow around stack container */
+}
+
+/* 3D Effect for Stack Items (No rotation, just depth) */
+.stack-item {
+  background-color: #28a745; /* Green color for the box */
+  color: white; /* Text color inside the box */
+  width: 120px;
+  height: 60px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 3D effect with deeper shadow */
+  transform: translateZ(50px); /* Slight push to make it look like it is floating */
+  transition: transform 0.2s, box-shadow 0.3s ease-out;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333; /* Border to enhance 3D look */
+}
+
+/* Hover effect for stack items (deeper shadow on hover) */
+.stack-item:hover {
+  transform: translateZ(60px); /* Push further when hovered */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover for 3D effect */
+}
+
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white; /* Ensure background color is white */
+}
+
+/* Operation Log List Style */
+.log-sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.log-sidebar li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Mode toggle button */
+.mode-toggle {
+  padding: 10px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.mode-toggle:hover {
+  background-color: #0056b3;
+}
